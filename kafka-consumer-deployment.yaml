@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka-consumer-ex
+  labels:
+    app: kafka-consumer-ex
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafka-consumer-ex
+  template:
+    metadata:
+      labels:
+        app: kafka-consumer-ex
+    spec:
+      containers:
+      - name: kafka-consumer-ex
+        image: aruna451/kafka-consumer-ex:v1.0
+        ports:
+        - containerPort: 9191
+
+
